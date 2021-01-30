@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #272727;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 15vw;
+  min-width: 160px;
+  background-color: #272727;
+  z-index: 1;
+}
+.menu .face-container {
+  background-color: #383838;
+  margin: 0;
+  width: 100%;
+  padding: 10px;
+}
+.menu .face-container .my-face {
+  display: block;
+  width: 200px;
+  min-width: 100px;
+  max-width: 50%;
+  border-radius: 50rem;
+  margin: 20px auto;
+}
+.menu .menu-items {
+  padding: none;
+  height: 100%;
+  background-color: #404041;
+}
+.menu .menu-items .list-item {
+  padding: 10px 0;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  list-style: none;
+  max-width: 100%;
+  padding-right: 10px;
+  background: linear-gradient(to right, #707070 50%, #404041 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.4s ease;
+}
+.menu .menu-items .list-item svg {
+  margin-top: 10px;
+  fill: white;
+  height: 20px;
+  width: auto;
+}
+.menu .menu-items .list-item a {
+  margin-left: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+}
+.menu .menu-items .list-item:hover {
+  background-position: left top;
+  border-right: 5px solid #4ad295;
+}
+.menu .menu-items .list-item:hover svg {
+  fill: #4ad295;
+}
+.menu .menu-items .list-item:hover a {
+  color: #4ad295;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: flex-end;
+}
+.content .content-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 85vw;
+  color: white;
+}
+.content .content-section .hero-section {
+  width: 50%;
+}
+
+/*# sourceMappingURL=style.css.map */
