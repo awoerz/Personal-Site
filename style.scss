@@ -5,14 +5,54 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+//variables
 $darkest-bg: #272727;
 $darker-bg: #383838;
 $dark-bg: #404041;
 $lighter-bg: #707070;
 $green: #4ad295;
 
+//mixins
+@mixin for-tablet-and-below {
+  @media (max-width: 1065px) {
+    @content;
+  }
+}
+
+@mixin for-desktop {
+  @media (min-width: 1066px) {
+    @content;
+  }
+}
+
 body {
   background-color: $darkest-bg;
+}
+
+#toggle-menu {
+  position: fixed;
+  margin-left: 0vw;
+  background-color: pink;
+  z-index: 3;
+  visibility: hidden;
+
+  &:checked ~ #main-menu {
+    color: blue;
+    transform: translateX(0);
+  }
+  &:checked ~ label {
+    transform: translateX(163px);
+  }
+}
+label {
+  position: fixed;
+  margin-left: 0vw;
+  color: white;
+  z-index: 3;
+  transition: transform ease-in 0.25s;
+  @include for-desktop {
+    display: none;
+  }
 }
 
 .menu {
@@ -23,6 +63,10 @@ body {
   min-width: 160px;
   background-color: $darkest-bg;
   z-index: 1;
+  transition: transform ease-in 0.25s;
+  @include for-tablet-and-below {
+    transform: translateX(-160px);
+  }
   .face-container {
     background-color: $darker-bg;
     margin: 0;
@@ -55,7 +99,7 @@ body {
       background-position: right bottom;
       transition: all 0.4s ease;
       svg {
-        margin-top: 10px;
+        margin-top: 5px;
         fill: white;
         height: 20px;
         width: auto;
