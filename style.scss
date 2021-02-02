@@ -303,7 +303,7 @@ label {
       }
     }
     .right-section {
-      background-color: $darkest-bg;
+      background-color: $darker-bg;
       margin: 30px;
       border-radius: 5px;
       padding: 20px;
@@ -367,5 +367,84 @@ label {
         }
       }
     }
+  }
+  #projects {
+    background-color: $very-dark;
+    display: flex;
+    flex-direction: row;
+    width: 84vw;
+    .featured-project {
+      height: fit-content;
+      width: 50%;
+      background-color: $darkest-bg;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      margin: 20px;
+      border-radius: 5px;
+      .featured-project-header {
+        font-family: $main-font-family;
+        font-size: 25px;
+        margin-bottom: 20px;
+      }
+      .image-container {
+        img {
+          width: 100%;
+        }
+      }
+      .link-section {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        div {
+          border: 2px solid $green;
+          border-radius: 5px;
+          padding: 5px 10px;
+          margin-right: 20px;
+          transition: all 0.4s ease;
+          a {
+            font-family: $main-font-family;
+            color: $green;
+            text-decoration: none;
+            font-size: 20px;
+          }
+          &:hover {
+            background-color: $dark-bg;
+            box-shadow: 0px 0px 10px $green;
+            border: 2px solid $dark-bg;
+            a {
+              color: white;
+            }
+          }
+          &:active {
+            transform: translateY(3px);
+            box-shadow: none;
+          }
+        }
+      }
+      .tech-list-header {
+        font-family: $main-font-family;
+        font-size: 20px;
+        margin-top: 20px;
+      }
+      .technology-list {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        .tech-item {
+          font-family: $main-font-family;
+          font-size: 20px;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+  #blog {
+    background-color: $darkest-bg;
+  }
+  #contact {
+    background-color: $very-dark;
   }
 }
