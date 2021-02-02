@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html {
@@ -10,12 +9,15 @@ html {
 }
 
 //variables
+$main-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$typed-font-family: Consolas, monaco, monospace;
+$very-dark: #1e1e1e;
 $darkest-bg: #272727;
 $darker-bg: #383838;
 $dark-bg: #404041;
 $lighter-bg: #707070;
 $green: #4ad295;
-
+$red: #ff5d6a;
 //mixins
 @mixin for-tablet-and-below {
   @media (max-width: 1065px) {
@@ -55,7 +57,6 @@ body {
 #toggle-menu {
   position: fixed;
   margin-left: 0vw;
-  background-color: pink;
   z-index: 3;
   visibility: hidden;
   &:checked {
@@ -78,9 +79,9 @@ body {
 }
 
 label {
+  margin-top: 1vh;
   position: fixed;
   margin-left: 1vw;
-  color: white;
   z-index: 3;
   transition: transform ease-in 0.25s;
   height: 60px;
@@ -89,6 +90,7 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #27272763;
   @include for-desktop {
     display: none;
   }
@@ -97,7 +99,7 @@ label {
     flex: none;
     width: 100%;
     height: 2px;
-    background: white;
+    background: $green;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -128,6 +130,7 @@ label {
   background-color: $darkest-bg;
   z-index: 1;
   transition: transform ease-in 0.25s;
+  font-family: $main-font-family;
   @include for-tablet-and-below {
     transform: translateX(-160px);
   }
@@ -161,11 +164,6 @@ label {
       background-size: 200% 100%;
       background-position: right bottom;
       transition: all 0.4s ease;
-      /*
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      */
       a {
         width: 100%;
         margin-left: 10px;
@@ -173,8 +171,9 @@ label {
         text-decoration: none;
         font-size: 22px;
         display: flex;
-        justify-content: center;
+        justify-content: left;
         align-items: center;
+        padding-left: 1.3rem;
         svg {
           margin-right: 10px;
           fill: white;
@@ -206,39 +205,34 @@ label {
   .content-section {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     height: 100vh;
     width: 100vw;
     color: white;
     @include for-desktop {
       width: 84vw;
     }
+  }
+  #home {
+    justify-content: center;
     .hero-section {
-      height: 50%;
-      width: 50%;
-      background-color: rgba(64, 64, 65, 0.5);
-      display: flex;
-      justify-content: center;
-      align-self: flex-start;
-      padding-left: 20px;
-      flex-direction: column;
-      border-radius: 5px;
-      margin: 100px 0 0 80px;
+      align-self: center;
       .content-header {
         font-size: 30px;
+        font-family: $main-font-family;
+        font-weight: 500;
       }
-      .content-sub-header {
+      #typed-text {
+        margin-top: 10px;
         width: fit-content;
-        font-family: Courier, monospace;
         display: inline-block;
+        font-family: $typed-font-family;
         .sub-header-text {
           display: inline-block;
           overflow: hidden;
           letter-spacing: 2px;
-          animation: typing 1.5s steps(13, end), blink 0.75s step-end infinite;
+          animation: typing 3.5s steps(13, end), blink 0.75s step-end infinite;
           white-space: nowrap;
-          font-size: 30px;
+          font-size: 40px;
           font-weight: 700;
           border-right: 4px solid orange;
           box-sizing: border-box;
@@ -247,34 +241,130 @@ label {
       .button-row {
         margin-top: 20px;
         display: flex;
-        div {
+        .button {
+          font-family: $main-font-family;
           margin-right: 20px;
-          background-color: $lighter-bg;
-          padding: 10px;
+          padding: 10px 20px;
           font-size: 20px;
           border-radius: 3px;
-          transition: all 0.4s ease;
-          a {
-            width: 100%;
-            color: white;
-            text-decoration: none;
-          }
+          transition: all 0.2s ease;
           &:hover {
             background-color: $dark-bg;
+            box-shadow: 0px 0px 10px $green;
             a {
-              color: $green;
+              color: white;
             }
+          }
+          &:active {
+            transform: translateY(3px);
+            box-shadow: none;
+          }
+          a {
+            width: 100%;
+            text-decoration: none;
+          }
+        }
+        .green-button {
+          background-color: $green;
+          a {
+            color: $very-dark;
+          }
+        }
+        .dark-button {
+          background-color: $darker-bg;
+          a {
+            color: $green;
           }
         }
       }
     }
     .home-image-container {
+      width: 84vw;
+      background-color: $very-dark;
       position: absolute;
       z-index: -1;
-      top: 30px;
-      right: 30px;
       img {
-        max-height: 630px;
+        filter: blur(4px);
+      }
+    }
+  }
+  #about {
+    display: flex;
+    flex-direction: row;
+    max-width: 84vw;
+    .image-container {
+      align-self: center;
+      background-color: $darker-bg;
+      margin-left: 30px;
+      border-radius: 5px;
+      padding: 30px;
+      img {
+        max-width: 350px;
+      }
+    }
+    .right-section {
+      background-color: $darkest-bg;
+      margin: 30px;
+      border-radius: 5px;
+      padding: 20px;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      height: fit-content;
+      align-self: center;
+      .about-header {
+        margin-left: 20px;
+        color: $green;
+        font-size: 30px;
+        font-family: $main-font-family;
+      }
+      .about-paragraph {
+        border-radius: 5px;
+        margin: 20px;
+        background-color: $darker-bg;
+        padding: 20px;
+        font-family: $main-font-family;
+        font-size: 20px;
+      }
+      .skills-section {
+        background-color: $dark-bg;
+        margin: 0 20px;
+        border-radius: 5px;
+        .experience-title {
+          margin: 20px;
+          font-family: $main-font-family;
+          font-size: 20px;
+          color: $green;
+        }
+        .list {
+          margin: 20px;
+          display: flex;
+          flex-direction: row;
+          .experience-item {
+            font-family: $main-font-family;
+            font-size: 20px;
+            margin-right: 10px;
+          }
+        }
+      }
+      .chart-section {
+        margin: 20px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .chart-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          p {
+            font-family: $main-font-family;
+            font-size: 20px;
+            margin: 20px;
+          }
+          canvas {
+            max-width: 350px;
+          }
+        }
       }
     }
   }
