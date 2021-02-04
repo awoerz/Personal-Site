@@ -565,6 +565,7 @@ label {
       .right-project-container {
         display: flex;
         flex-direction: column;
+        min-width: fit-content;
         width: 45%;
         max-height: 100%;
         margin: 20px;
@@ -573,8 +574,74 @@ label {
           width: 100%;
           margin: 10px;
           background-color: $dark-bg;
-          padding: 10px;
+          padding: 20px;
           border-radius: 3px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          .image-container {
+            margin-right: 20px;
+            img {
+              max-width: 250px;
+            }
+          }
+          .description-container {
+            display: flex;
+            flex-direction: column;
+            .project-header {
+              font-size: 20px;
+              display: flex;
+              flex-direction: row;
+              font-family: $main-font-family;
+              margin-bottom: 10px;
+              .project-title {
+                margin-left: 5px;
+                color: $green;
+              }
+            }
+            .project-buttons {
+              display: flex;
+              flex-direction: row;
+              margin-bottom: 10px;
+              div {
+                border: 2px solid $green;
+                border-radius: 5px;
+                padding: 5px 10px;
+                margin-right: 20px;
+                transition: all 0.4s ease;
+                a {
+                  font-family: $main-font-family;
+                  color: $green;
+                  text-decoration: none;
+                  font-size: 20px;
+                }
+                &:hover {
+                  background-color: $dark-bg;
+                  box-shadow: 0px 0px 10px $green;
+                  border: 2px solid $dark-bg;
+                  a {
+                    color: white;
+                  }
+                }
+                &:active {
+                  transform: translateY(3px);
+                  box-shadow: none;
+                }
+              }
+            }
+            .technology-header {
+              font-family: $main-font-family;
+              margin-top: 5px;
+            }
+            .technology-list {
+              font-family: $main-font-family;
+              display: flex;
+              flex-direction: row;
+              div {
+                margin-right: 5px;
+              }
+            }
+          }
         }
       }
     }
