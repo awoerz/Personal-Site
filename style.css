@@ -172,6 +172,94 @@ label .hamburger-icon::after {
   width: 100%;
   display: flex;
   flex-direction: column;
+  /*
+  #about {
+    display: flex;
+    flex-direction: row;
+    max-width: 84vw;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: fit-content;
+    .image-container {
+      align-self: center;
+      background-color: $darker-bg;
+      margin-left: 30px;
+      border-radius: 5px;
+      padding: 30px;
+      width: 30%;
+      img {
+        max-width: 100%;
+      }
+    }
+    .right-section {
+      background-color: $darker-bg;
+      margin: 30px;
+      border-radius: 5px;
+      padding: 20px;
+      max-width: 60%;
+      display: flex;
+      flex-direction: column;
+      height: fit-content;
+      align-self: center;
+      .about-header {
+        margin-left: 20px;
+        color: $green;
+        font-size: 30px;
+        font-family: $main-font-family;
+      }
+      .about-paragraph {
+        border-radius: 5px;
+        background-color: $darker-bg;
+        padding: 20px;
+        font-family: $main-font-family;
+        font-size: 20px;
+      }
+      .skills-section {
+        background-color: $dark-bg;
+        margin: 0 20px;
+        border-radius: 5px;
+        .experience-title {
+          margin: 20px;
+          font-family: $main-font-family;
+          font-size: 20px;
+          color: $green;
+        }
+        .list {
+          margin: 20px;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          .experience-item {
+            font-family: $main-font-family;
+            font-size: 20px;
+            margin-right: 10px;
+          }
+        }
+      }
+      .chart-section {
+        margin: 20px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        .chart-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          p {
+            font-family: $main-font-family;
+            font-size: 20px;
+            margin: 20px;
+          }
+          canvas {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+  */
 }
 @media (min-width: 1066px) {
   .content {
@@ -181,12 +269,17 @@ label .hamburger-icon::after {
 .content .content-section {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
+  height: fit-content;
   width: 84vw;
   color: white;
 }
+@media (max-width: 1065px) {
+  .content .content-section {
+    width: 100%;
+  }
+}
 .content #home {
-  width: 84vw;
   display: flex;
   justify-content: center;
 }
@@ -272,105 +365,110 @@ label .hamburger-icon::after {
 }
 .content #about {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.content #about .top-section {
+  width: 100%;
+  display: flex;
   flex-direction: row;
-  max-width: 84vw;
   flex-wrap: wrap;
-  justify-content: space-around;
-  height: fit-content;
+  align-items: center;
+  justify-content: space-evenly;
 }
-.content #about .image-container {
-  align-self: center;
-  background-color: #383838;
-  margin-left: 30px;
+.content #about .top-section .left-section {
+  max-width: 460px;
+  padding: 20px;
   border-radius: 5px;
-  padding: 30px;
-  width: 30%;
+  margin: 20px;
 }
-.content #about .image-container img {
+.content #about .top-section .left-section img {
   max-width: 100%;
 }
-.content #about .right-section {
+.content #about .top-section .right-section {
   background-color: #383838;
-  margin: 30px;
   border-radius: 5px;
-  padding: 20px;
+  padding: 10px;
   max-width: 60%;
+}
+.content #about .top-section .right-section .about-header {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  color: #4ad295;
+  margin: 10px;
+}
+.content #about .top-section .right-section .about-paragraph {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  margin: 10px;
+}
+.content #about .top-section .right-section .skills-section {
   display: flex;
   flex-direction: column;
-  height: fit-content;
-  align-self: center;
 }
-.content #about .right-section .about-header {
-  margin-left: 20px;
-  color: #4ad295;
-  font-size: 30px;
+.content #about .top-section .right-section .skills-section .experience-title {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-.content #about .right-section .about-paragraph {
-  border-radius: 5px;
-  background-color: #383838;
-  padding: 20px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 20px;
-}
-.content #about .right-section .skills-section {
-  background-color: #404041;
-  margin: 0 20px;
-  border-radius: 5px;
-}
-.content #about .right-section .skills-section .experience-title {
-  margin: 20px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 20px;
+  font-size: 25px;
+  margin: 10px;
   color: #4ad295;
 }
-.content #about .right-section .skills-section .list {
-  margin: 20px;
+.content #about .top-section .right-section .skills-section .list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin: 10px;
 }
-.content #about .right-section .skills-section .list .experience-item {
+.content #about .top-section .right-section .skills-section .list .experience-item {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 20px;
   margin-right: 10px;
 }
-.content #about .right-section .chart-section {
-  margin: 20px 0;
+.content #about .bottom-section {
+  margin: 20px 30px;
+  max-width: 100%;
+}
+.content #about .bottom-section .chart-section {
+  background-color: #383838;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
-.content #about .right-section .chart-section .chart-container {
+.content #about .bottom-section .chart-section .chart-container {
+  width: 450px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  flex-wrap: wrap;
 }
-.content #about .right-section .chart-section .chart-container p {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+.content #about .bottom-section .chart-section .chart-container p {
   font-size: 20px;
-  margin: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #4ad295;
 }
-.content #about .right-section .chart-section .chart-container canvas {
+.content #about .bottom-section .chart-section .chart-container canvas {
   max-width: 100%;
 }
 .content #projects {
   background-color: #1e1e1e;
-  width: 84vw;
   display: flex;
   justify-content: center;
 }
 .content #projects .projects-container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   height: fit-content;
-  background-color: #707070;
 }
 .content #projects .projects-container .featured-project {
   height: fit-content;
-  max-width: 45%;
+  min-width: fit-content;
+  width: fit-content;
   background-color: #272727;
   padding: 40px;
   display: flex;
@@ -389,6 +487,9 @@ label .hamburger-icon::after {
 .content #projects .projects-container .featured-project .featured-project-header div {
   margin-left: 10px;
   color: #4ad295;
+}
+.content #projects .projects-container .featured-project .image-container {
+  max-width: 600px;
 }
 .content #projects .projects-container .featured-project .image-container img {
   max-width: 100%;
@@ -440,10 +541,19 @@ label .hamburger-icon::after {
   margin-right: 20px;
 }
 .content #projects .projects-container .right-project-container {
-  max-width: 45%;
-  background-color: #404041;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
   max-height: 100%;
   margin: 20px;
+}
+.content #projects .projects-container .right-project-container .single-project {
+  height: 30%;
+  width: 100%;
+  margin: 10px;
+  background-color: #404041;
+  padding: 10px;
+  border-radius: 3px;
 }
 .content #blog {
   background-color: #272727;
