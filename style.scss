@@ -18,6 +18,7 @@ $dark-bg: #404041;
 $lighter-bg: #707070;
 $green: #4ad295;
 $red: #ff5d6a;
+
 //mixins
 @mixin for-tablet-and-below {
   @media (max-width: 1065px) {
@@ -61,7 +62,6 @@ body {
   visibility: hidden;
   &:checked {
     ~ #main-menu {
-      color: blue;
       transform: translateX(0);
     }
     ~ label {
@@ -128,7 +128,7 @@ label {
   width: 15vw;
   min-width: 160px;
   background-color: $darkest-bg;
-  z-index: 1;
+  z-index: 3;
   transition: transform ease-in 0.25s;
   font-family: $main-font-family;
   @include for-tablet-and-below {
@@ -155,7 +155,6 @@ label {
     height: 100%;
     background-color: $dark-bg;
     .list-item {
-      padding: 10px 0;
       position: relative;
       list-style: none;
       max-width: 100%;
@@ -165,20 +164,22 @@ label {
       background-position: right bottom;
       transition: all 0.4s ease;
       a {
+        padding: 10px 0;
         width: 100%;
-        margin-left: 10px;
         color: white;
         text-decoration: none;
         font-size: 22px;
         display: flex;
-        justify-content: left;
+        justify-content: center;
         align-items: center;
-        padding-left: 1.3rem;
-        svg {
-          margin-right: 10px;
-          fill: white;
-          height: 20px;
-          width: auto;
+        .center-item {
+          width: 115px;
+          svg {
+            margin-right: 10px;
+            fill: white;
+            height: 20px;
+            width: auto;
+          }
         }
       }
       &:hover {
@@ -213,6 +214,7 @@ label {
       width: 100%;
     }
   }
+
   #home {
     display: flex;
     justify-content: center;
@@ -297,94 +299,6 @@ label {
       filter: blur(4px);
     }
   }
-  /*
-  #about {
-    display: flex;
-    flex-direction: row;
-    max-width: 84vw;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    height: fit-content;
-    .image-container {
-      align-self: center;
-      background-color: $darker-bg;
-      margin-left: 30px;
-      border-radius: 5px;
-      padding: 30px;
-      width: 30%;
-      img {
-        max-width: 100%;
-      }
-    }
-    .right-section {
-      background-color: $darker-bg;
-      margin: 30px;
-      border-radius: 5px;
-      padding: 20px;
-      max-width: 60%;
-      display: flex;
-      flex-direction: column;
-      height: fit-content;
-      align-self: center;
-      .about-header {
-        margin-left: 20px;
-        color: $green;
-        font-size: 30px;
-        font-family: $main-font-family;
-      }
-      .about-paragraph {
-        border-radius: 5px;
-        background-color: $darker-bg;
-        padding: 20px;
-        font-family: $main-font-family;
-        font-size: 20px;
-      }
-      .skills-section {
-        background-color: $dark-bg;
-        margin: 0 20px;
-        border-radius: 5px;
-        .experience-title {
-          margin: 20px;
-          font-family: $main-font-family;
-          font-size: 20px;
-          color: $green;
-        }
-        .list {
-          margin: 20px;
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          .experience-item {
-            font-family: $main-font-family;
-            font-size: 20px;
-            margin-right: 10px;
-          }
-        }
-      }
-      .chart-section {
-        margin: 20px 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-        .chart-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: space-between;
-          p {
-            font-family: $main-font-family;
-            font-size: 20px;
-            margin: 20px;
-          }
-          canvas {
-            max-width: 100%;
-          }
-        }
-      }
-    }
-  }
-  */
 
   #about {
     display: flex;
@@ -410,7 +324,9 @@ label {
         background-color: $darker-bg;
         border-radius: 5px;
         padding: 10px;
-        max-width: 60%;
+        width: fit-content;
+        max-width: 900px;
+        margin: 20px;
         .about-header {
           font-family: $main-font-family;
           font-size: 30px;
@@ -427,7 +343,7 @@ label {
           flex-direction: column;
           .experience-title {
             font-family: $main-font-family;
-            font-size: 25px;
+            font-size: 20px;
             margin: 10px;
             color: $green;
           }
@@ -485,7 +401,7 @@ label {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-evenly;
       height: fit-content;
       .featured-project {
         height: fit-content;
@@ -568,17 +484,18 @@ label {
         min-width: fit-content;
         width: 45%;
         max-height: 100%;
-        margin: 20px;
         .single-project {
           height: 30%;
-          width: 100%;
-          margin: 10px;
-          background-color: $dark-bg;
+          width: fit-content;
+          margin: 20px;
+          background-color: $darker-bg;
           padding: 20px;
           border-radius: 3px;
           display: flex;
           flex-direction: row;
           align-items: center;
+          flex-wrap: wrap;
+          justify-content: center;
           .image-container {
             margin-right: 20px;
             img {
@@ -613,7 +530,6 @@ label {
                   font-family: $main-font-family;
                   color: $green;
                   text-decoration: none;
-                  font-size: 20px;
                 }
                 &:hover {
                   background-color: $dark-bg;
@@ -631,7 +547,7 @@ label {
             }
             .technology-header {
               font-family: $main-font-family;
-              margin-top: 5px;
+              margin-bottom: 5px;
             }
             .technology-list {
               font-family: $main-font-family;
@@ -649,7 +565,79 @@ label {
 
   #blog {
     background-color: $darkest-bg;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 20px;
+    .featured-blog {
+      background-color: $dark-bg;
+      align-self: center;
+      width: fit-content;
+      max-width: 1000px;
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    .single-projects-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      margin-top: 10px;
+      .single-blog {
+        background-color: $dark-bg;
+        padding: 20px;
+        width: fit-content;
+        max-width: 400px;
+        border-radius: 5px;
+        img {
+          max-height: 200px;
+        }
+      }
+    }
+
+    .blog-item {
+      img {
+        align-self: center;
+        max-width: 100%;
+      }
+      .blog-content {
+        .title-row {
+          margin-top: 10px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          .blog-title {
+            color: $green;
+          }
+        }
+        .tag-list {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          margin: 10px 0;
+          .tag-item {
+            border: 1px solid $green;
+            border-radius: 5px;
+            padding: 5px 10px;
+            list-style: none;
+            margin-right: 10px;
+          }
+        }
+        .blog-text {
+          margin: 10px 0;
+          a {
+            color: $green;
+            text-decoration: none;
+          }
+        }
+      }
+    }
   }
+
   #contact {
     background-color: $very-dark;
   }
