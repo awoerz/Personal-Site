@@ -121,6 +121,30 @@ label {
   }
 }
 
+.button {
+  font-family: $main-font-family;
+  margin-right: 20px;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+  &:hover {
+    background-color: $dark-bg;
+    box-shadow: 0px 0px 10px $green;
+    a {
+      color: white;
+    }
+  }
+  &:active {
+    transform: translateY(3px);
+    box-shadow: none;
+  }
+  a {
+    width: 100%;
+    text-decoration: none;
+  }
+}
+
 .menu {
   position: fixed;
   top: 0;
@@ -246,29 +270,6 @@ label {
       .button-row {
         margin-top: 20px;
         display: flex;
-        .button {
-          font-family: $main-font-family;
-          margin-right: 20px;
-          padding: 10px 20px;
-          font-size: 20px;
-          border-radius: 3px;
-          transition: all 0.2s ease;
-          &:hover {
-            background-color: $dark-bg;
-            box-shadow: 0px 0px 10px $green;
-            a {
-              color: white;
-            }
-          }
-          &:active {
-            transform: translateY(3px);
-            box-shadow: none;
-          }
-          a {
-            width: 100%;
-            text-decoration: none;
-          }
-        }
         .green-button {
           background-color: $green;
           a {
@@ -564,76 +565,95 @@ label {
   }
 
   #blog {
-    background-color: $darkest-bg;
     display: flex;
     flex-direction: column;
-    align-content: center;
+    justify-content: center;
     padding: 20px;
-    .featured-blog {
-      background-color: $dark-bg;
-      align-self: center;
-      width: fit-content;
-      max-width: 1000px;
-      margin: 20px;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
-      border-radius: 5px;
-    }
-    .single-projects-container {
+    .card-container {
       display: flex;
       flex-direction: row;
-      flex-wrap: wrap;
       justify-content: space-evenly;
-      margin-top: 10px;
-      .single-blog {
+      align-items: center;
+      flex-wrap: wrap;
+      height: 570px;
+      .blog-card {
+        max-width: 400px;
         background-color: $dark-bg;
         padding: 20px;
-        width: fit-content;
-        max-width: 400px;
+        height: 550px;
         border-radius: 5px;
-        img {
-          max-height: 200px;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.5s ease;
+        &:hover {
+          height: 570px;
+        }
+        .blog-card-image {
+          img {
+            max-width: 100%;
+          }
+        }
+        .blog-content {
+          display: flex;
+          flex-direction: column;
+          .header-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 10px 0;
+            align-items: center;
+            .blog-header {
+              color: $green;
+            }
+          }
+          .tag-row {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 10px;
+            .tag-item {
+              margin-right: 10px;
+              text-decoration: $green underline;
+              font-size: 18px;
+            }
+          }
+          .blog-text {
+            display: flex;
+            flex-direction: column;
+            transition: all 0.5s ease;
+            .paragraph-text {
+              margin-bottom: 10px;
+            }
+            .read-more-container {
+              width: fit-content;
+              border: 0px solid $green;
+              transition: all 0.5s ease;
+              a {
+                font-size: 20px;
+                color: $green;
+                text-decoration: none;
+                transition: all 0.5s ease;
+                width: fit-content;
+              }
+              &:hover {
+                border-bottom: 1px solid $green;
+                a {
+                  color: white;
+                }
+              }
+            }
+          }
         }
       }
     }
-
-    .blog-item {
-      img {
-        align-self: center;
-        max-width: 100%;
-      }
-      .blog-content {
-        .title-row {
-          margin-top: 10px;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-          .blog-title {
-            color: $green;
-          }
-        }
-        .tag-list {
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          margin: 10px 0;
-          .tag-item {
-            border: 1px solid $green;
-            border-radius: 5px;
-            padding: 5px 10px;
-            list-style: none;
-            margin-right: 10px;
-          }
-        }
-        .blog-text {
-          margin: 10px 0;
-          a {
-            color: $green;
-            text-decoration: none;
-          }
-        }
+    .button {
+      align-self: center;
+      width: fit-content;
+      margin: 40px 20px 20px;
+      border: 1px solid $green;
+      border-radius: 5px;
+      a {
+        color: $green;
       }
     }
   }
