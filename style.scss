@@ -569,76 +569,84 @@ body {
     flex-direction: column;
     justify-content: center;
     padding: 20px;
+    min-height: 100vh;
     .card-container {
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
       align-items: center;
       flex-wrap: wrap;
-      height: 570px;
-      .blog-card {
-        max-width: 400px;
-        background-color: $dark-bg;
-        padding: 20px;
-        height: 550px;
-        border-radius: 5px;
+      min-height: fit-content;
+      .blog-card-container {
+        height: 600px;
         display: flex;
         flex-direction: column;
-        transition: all 0.5s ease;
-        &:hover {
-          height: 570px;
-        }
-        .blog-card-image {
-          img {
-            max-width: 100%;
-          }
-        }
-        .blog-content {
+        justify-content: center;
+        align-content: center;
+        .blog-card {
+          max-width: 400px;
+          background-color: $dark-bg;
+          padding: 20px;
+          height: 550px;
+          border-radius: 5px;
           display: flex;
           flex-direction: column;
-          .header-row {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            margin: 10px 0;
-            align-items: center;
-            .blog-header {
-              color: $green;
+          transition: all 0.5s ease;
+          &:hover {
+            height: 570px;
+          }
+          .blog-card-image {
+            img {
+              max-width: 100%;
             }
           }
-          .tag-row {
-            list-style: none;
-            display: flex;
-            flex-direction: row;
-            margin-bottom: 10px;
-            .tag-item {
-              margin-right: 10px;
-              text-decoration: $green underline;
-              font-size: 18px;
-            }
-          }
-          .blog-text {
+          .blog-content {
             display: flex;
             flex-direction: column;
-            transition: all 0.5s ease;
-            .paragraph-text {
-              margin-bottom: 10px;
-            }
-            .read-more-container {
-              width: fit-content;
-              border: 0px solid $green;
-              transition: all 0.5s ease;
-              a {
-                font-size: 20px;
+            .header-row {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              margin: 10px 0;
+              align-items: center;
+              .blog-header {
                 color: $green;
-                text-decoration: none;
-                transition: all 0.5s ease;
-                width: fit-content;
               }
-              &:hover {
-                border-bottom: 1px solid $green;
+            }
+            .tag-row {
+              list-style: none;
+              display: flex;
+              flex-direction: row;
+              margin-bottom: 10px;
+              .tag-item {
+                margin-right: 10px;
+                text-decoration: $green underline;
+                font-size: 18px;
+              }
+            }
+            .blog-text {
+              display: flex;
+              flex-direction: column;
+              transition: all 0.5s ease;
+              .paragraph-text {
+                margin-bottom: 10px;
+              }
+              .read-more-container {
+                width: fit-content;
+                border: 0px solid $green;
+                transition: all 0.5s ease;
                 a {
-                  color: white;
+                  font-size: 20px;
+                  color: $green;
+                  text-decoration: none;
+                  transition: all 0.5s ease;
+                  width: fit-content;
+                }
+                &:hover {
+                  border-bottom: 1px solid $green;
+                  a {
+                    color: white;
+                  }
                 }
               }
             }
@@ -668,6 +676,9 @@ body {
       display: flex;
       flex-direction: column;
       width: 600px;
+      @include for-tablet-and-below {
+        width: 400px;
+      }
       .input-container {
         margin: 20px 0;
         position: relative;
