@@ -10,7 +10,7 @@
 <body>
 
   <input type="checkbox" name="toggle-menu" id="toggle-menu">
-  <label for="toggle-menu">
+  <label for="toggle-menu" class="menu-label">
     <span class="hamburger-icon"></span>
   </label>
 
@@ -264,7 +264,7 @@
       <div class="card-container">
         <div class="blog-card">
           <div class="blog-card-image">
-            <img src="/images/laptop-opening.jpg" alt="" srcset="">
+            <img src="./images/laptop-opening.jpg" alt="" srcset="">
           </div>
           <div class="blog-content">
             <div class="header-row">
@@ -287,7 +287,7 @@
   
         <div class="blog-card">
           <div class="blog-card-image">
-            <img src="/images/laptop-opening.jpg" alt="" srcset="">
+            <img src="./images/laptop-opening.jpg" alt="" srcset="">
           </div>
           <div class="blog-content">
             <div class="header-row">
@@ -311,7 +311,7 @@
   
         <div class="blog-card">
           <div class="blog-card-image">
-            <img src="/images/laptop-opening.jpg" alt="" srcset="">
+            <img src="./images/laptop-opening.jpg" alt="" srcset="">
           </div>
           <div class="blog-content">
             <div class="header-row">
@@ -338,7 +338,21 @@
     </div>
 
     <div class="content-section" id="contact">
-      
+      <div class="form">
+        <div class="input-container">
+          <input type="text" id="name" required class="single-line-item">
+          <label for="name" class="input-label">Name</label>
+        </div>
+        <div class="input-container">
+          <input type="text" required class="single-line-item">
+          <label for="text" class="input-label">Email</label>
+        </div>
+        <div class="paragraph-container">
+          <textarea name="message" id="message" rows="10" required></textarea> 
+          <label for="message">Put Your Message Here.</label>
+        </div>
+        <div class="button form-button">Send Message</div>
+      </div>
     </div>
   </div>
 

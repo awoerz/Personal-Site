@@ -78,7 +78,7 @@ body {
   }
 }
 
-label {
+.menu-label {
   margin-top: 1vh;
   position: fixed;
   margin-left: 1vw;
@@ -660,5 +660,90 @@ label {
 
   #contact {
     background-color: $very-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .form {
+      display: flex;
+      flex-direction: column;
+      width: 600px;
+      .input-container {
+        margin: 20px 0;
+        position: relative;
+        box-sizing: border-box;
+        height: 45px;
+        width: 100%;
+        .single-line-item {
+          background: none;
+          outline: none;
+          height: 100%;
+          width: 100%;
+          padding: 0 10px;
+          font-size: 17px;
+          border: none;
+          border-bottom: 1px solid gray;
+          color: $green;
+          &:focus,
+          &:valid {
+            border-bottom: 1px solid $green;
+            ~ .input-label {
+              font-size: 15px;
+              transform: translateY(-30px);
+            }
+          }
+        }
+        .input-label {
+          position: absolute;
+          font-size: 17px;
+          color: $green;
+          font-family: $main-font-family;
+          top: 15px;
+          left: 10px;
+          transition: all 0.5s ease;
+        }
+      }
+      .paragraph-container {
+        position: relative;
+        width: 100%;
+        textarea {
+          position: relative;
+          margin-top: 20px;
+          padding: 10px;
+          background: none;
+          border: 1px solid gray;
+          border-radius: 5px;
+          outline: none;
+          color: $green;
+          font-size: 17px;
+          width: 100%;
+          &:focus,
+          &:valid {
+            border: 1px solid $green;
+            ~ label {
+              display: none;
+              transform: translateY(-40px);
+              font-size: 15px;
+            }
+          }
+        }
+        label {
+          position: absolute;
+          font-size: 17px;
+          color: $green;
+          font-family: $main-font-family;
+          top: 25px;
+          left: 10px;
+          transition: all 0.5s ease;
+        }
+      }
+      .form-button {
+        color: $green;
+        align-self: flex-end;
+        justify-self: flex-end;
+        border: 1px solid $green;
+        margin: 10px 0;
+      }
+    }
   }
 }
