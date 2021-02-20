@@ -28,6 +28,13 @@ body {
   background-color: #272727;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:valid {
+  box-shadow: 0 0 0px 1000px #1e1e1e inset;
+  -webkit-text-fill-color: #4ad295;
+  caret-color: #4ad295;
+}
+
 #toggle-menu {
   position: fixed;
   margin-left: 0vw;
@@ -670,6 +677,7 @@ body {
   border: none;
   border-bottom: 1px solid gray;
   color: #4ad295;
+  caret-color: #4ad295;
 }
 .content #contact .form .input-container .single-line-item:focus, .content #contact .form .input-container .single-line-item:valid {
   border-bottom: 1px solid #4ad295;
@@ -703,10 +711,10 @@ body {
   font-size: 17px;
   width: 100%;
 }
-.content #contact .form .paragraph-container textarea:focus, .content #contact .form .paragraph-container textarea:valid {
+.content #contact .form .paragraph-container textarea:focus, .content #contact .form .paragraph-container textarea:valid, .content #contact .form .paragraph-container textarea:-webkit-autofill {
   border: 1px solid #4ad295;
 }
-.content #contact .form .paragraph-container textarea:focus ~ label, .content #contact .form .paragraph-container textarea:valid ~ label {
+.content #contact .form .paragraph-container textarea:focus ~ label, .content #contact .form .paragraph-container textarea:valid ~ label, .content #contact .form .paragraph-container textarea:-webkit-autofill ~ label {
   display: none;
   transform: translateY(-40px);
   font-size: 15px;
@@ -722,6 +730,7 @@ body {
 }
 .content #contact .form .form-button {
   color: #4ad295;
+  background: #404041;
   align-self: flex-end;
   justify-self: flex-end;
   border: 1px solid #4ad295;

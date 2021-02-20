@@ -1,3 +1,40 @@
+/*
+  Form submission Scripts:
+*/
+var form = document.getElementById('contact-form');
+
+var postFormData = (data) => {
+  fetch("https://api.staticforms.xyz/submit", {
+    method: 'POST',
+    body: data,
+    headers: {'Content-Type': '3eaf6f38-7d05-467e-9142-3aeb031b5538'}
+  })
+  .then(response => {
+    response.json()
+    console.log(response)
+  })
+  .then(result => {
+    console.log('Success ' + result)
+    alert('Success, see console.')
+  })
+  .catch(error => {
+    console.error('Error ' + error)
+  })
+}
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  //var formData = JSON.stringify(Object.fromEntries(new FormData(document.getElementById('contact-form')).entries()))
+  var formData = Object.fromEntries(new FormData(document.getElementById('contact-form')).entries())  
+  var postString = `accessKey=3eaf6f38-7d05-467e-9142-3aeb031b5538&name=${formData.name}&email=${formData.email}&message=${formData.message}`
+  alert(postString)
+  //postFormData(postString)
+  form.reset()
+})
+
+/*
+  Donut Chart Scripts:
+*/
 var chartOne = document.getElementById('firstChart');
 var chartTwo = document.getElementById('secondChart');
 var chartThree = document.getElementById('thirdChart');

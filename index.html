@@ -341,21 +341,23 @@
     </div>
 
     <div class="content-section" id="contact">
-      <div class="form">
+      <form action="https://api.staticforms.xyz/submit" method="post" class="form" id="contact-form">
+        <input type="hidden" name="accessKey" value="3eaf6f38-7d05-467e-9142-3aeb031b5538">
         <div class="input-container">
-          <input type="text" id="name" required class="single-line-item">
+          <input type="text" name="name" id="name" required class="single-line-item">
           <label for="name" class="input-label">Name</label>
         </div>
         <div class="input-container">
-          <input type="text" required class="single-line-item">
+          <input type="text" name="email" required class="single-line-item">
           <label for="text" class="input-label">Email</label>
         </div>
         <div class="paragraph-container">
           <textarea name="message" id="message" rows="10" required></textarea> 
           <label for="message">Put Your Message Here.</label>
         </div>
-        <div class="button form-button">Send Message</div>
-      </div>
+        <input type="submit" value="Send Message" class="button form-button" />
+      </form>
+
     </div>
   </div>
 

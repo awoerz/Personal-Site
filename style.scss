@@ -55,6 +55,13 @@ body {
   background-color: $darkest-bg;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:valid {
+  box-shadow: 0 0 0px 1000px $very-dark inset;
+  -webkit-text-fill-color: $green;
+  caret-color: $green;
+}
+
 #toggle-menu {
   position: fixed;
   margin-left: 0vw;
@@ -695,6 +702,7 @@ body {
           border: none;
           border-bottom: 1px solid gray;
           color: $green;
+          caret-color: $green;
           &:focus,
           &:valid {
             border-bottom: 1px solid $green;
@@ -729,7 +737,8 @@ body {
           font-size: 17px;
           width: 100%;
           &:focus,
-          &:valid {
+          &:valid,
+          &:-webkit-autofill {
             border: 1px solid $green;
             ~ label {
               display: none;
@@ -750,6 +759,7 @@ body {
       }
       .form-button {
         color: $green;
+        background: $dark-bg;
         align-self: flex-end;
         justify-self: flex-end;
         border: 1px solid $green;
