@@ -188,15 +188,18 @@ input:-webkit-autofill:valid {
   height: 20px;
   width: auto;
 }
+.menu .menu-items .list-item a .center-item svg:hover {
+  fill: #4ad295;
+}
 .menu .menu-items .list-item:hover {
   background-position: left top;
   border-right: 5px solid #4ad295;
 }
-.menu .menu-items .list-item:hover svg {
-  fill: #4ad295;
-}
 .menu .menu-items .list-item:hover a {
   color: #4ad295;
+}
+.menu .menu-items .list-item:hover a .center-item svg {
+  fill: #4ad295;
 }
 
 .content {
@@ -730,7 +733,7 @@ input:-webkit-autofill:valid {
 }
 .content #contact .form .form-button {
   color: #4ad295;
-  background: #404041;
+  background: #1e1e1e;
   align-self: flex-end;
   justify-self: flex-end;
   border: 1px solid #4ad295;

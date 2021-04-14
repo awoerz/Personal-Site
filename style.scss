@@ -210,17 +210,22 @@ input:-webkit-autofill:valid {
             fill: white;
             height: 20px;
             width: auto;
+            &:hover {
+              fill: $green;
+            }
           }
         }
       }
       &:hover {
         background-position: left top;
         border-right: 5px solid $green;
-        svg {
-          fill: $green;
-        }
         a {
           color: $green;
+          .center-item {
+            svg {
+              fill: $green;
+            }
+          }
         }
       }
     }
@@ -759,7 +764,7 @@ input:-webkit-autofill:valid {
       }
       .form-button {
         color: $green;
-        background: $dark-bg;
+        background: $very-dark;
         align-self: flex-end;
         justify-self: flex-end;
         border: 1px solid $green;
